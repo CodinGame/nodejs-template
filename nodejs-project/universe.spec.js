@@ -1,33 +1,21 @@
 ﻿﻿var assert = require('assert');
-var countAllStars = require('./exercises/universestub.js');
-var shouldShowHint = true;
+var universe = require('./universe.js');
+
 var reduceUsed = false;
 var superReduce = Array.prototype.reduce;
 Array.prototype.reduce = function () {
   reduceUsed = true;
   return superReduce.apply(this, arguments);
-}
+};
 
-function verifyCountAllStars() {
-  shouldShowHint = true;
-  assert.equal(6, countAllStars([1, 2, 3]));
-  assert.equal(16, countAllStars([10, 3, 2, 1]));
-  assert.equal(42, countAllStars([20, 20, 2]));
-  shouldShowHint = false;
-}
+it('should sum stars', function () {
+  try {
+    assert.equal(6, universe.countAllStars([1, 2, 3]));
+    assert.equal(16, universe.countAllStars([10, 3, 2, 1]));
+    assert.equal(42, universe.countAllStars([20, 20, 2]));
 
-it('verifyCountAllStars()', verifyCountAllStars);
+    success(true);
 
-afterEach(() => {
-  cleanup();
-  success(!shouldShowHint);
-})
-
-function cleanup() {
-  if (shouldShowHint) {
-    printMessage('Hint 💡', 'Did you properly accumulate all stars into \'totalStars\'? 🤔');
-  }
-  else {
     if (reduceUsed) {
       printMessage('My personal Yoda, you are. 🙏', '* ● ¸ .　¸. :° ☾ ° 　¸. ● ¸ .　　¸.　:. • ');
       printMessage('My personal Yoda, you are. 🙏', '           　★ °  ☆ ¸. ¸ 　★　 :.　 .   ');
@@ -39,8 +27,12 @@ function cleanup() {
     } else {
       printMessage('Hint 💡', 'Do you know the reduce function in JavaScript? 🤔');
     }
+  } catch (error) {
+    success(false);
+    printMessage('Hint 💡', 'Did you properly accumulate all stars into \'totalStars\'? 🤔');
+    throw error;
   }
-}
+});
 
 function printMessage(channel, message) {
   console.log('TECHIO> message --channel "' + channel + '" "' + message + '"');

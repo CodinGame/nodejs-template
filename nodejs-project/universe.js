@@ -6,4 +6,6 @@ function countAllStars(galaxies) {
   return totalStars;
 }
 
-module.exports = countAllStars;
+module.exports = {
+  countAllStars: countAllStars
+};
