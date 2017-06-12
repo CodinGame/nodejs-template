@@ -1,12 +1,9 @@
 title : Node.JS
 
-# Table of content
+# Table of contents
 plan:
   - title: Welcome # Set the page title
     statement: markdowns/welcome.md # Set the file path to the page content
-#  - title: Another Page
-#    statement: markdowns/another-page.md
-
 
 # Settings for your programming projects and the associated Docker images
 projects:
