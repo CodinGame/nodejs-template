@@ -14,8 +14,6 @@ it('should sum stars', function () {
     assert.equal(16, universe.countAllStars([10, 3, 2, 1]));
     assert.equal(42, universe.countAllStars([20, 20, 2]));
 
-    success(true);
-
     if (reduceUsed) {
       printMessage('My personal Yoda, you are. 🙏', '* ● ¸ .　¸. :° ☾ ° 　¸. ● ¸ .　　¸.　:. • ');
       printMessage('My personal Yoda, you are. 🙏', '           　★ °  ☆ ¸. ¸ 　★　 :.　 .   ');
@@ -28,7 +26,6 @@ it('should sum stars', function () {
       printMessage('Hint 💡', 'Do you know the reduce function in JavaScript? 🤔');
     }
   } catch (error) {
-    success(false);
     printMessage('Hint 💡', 'Did you properly accumulate all stars into \'totalStars\'? 🤔');
     throw error;
   }
@@ -36,8 +33,4 @@ it('should sum stars', function () {
 
 function printMessage(channel, message) {
   console.log('TECHIO> message --channel "' + channel + '" "' + message + '"');
-}
-
-function success(success) {
-  console.log('TECHIO> success '+ success);
 }
