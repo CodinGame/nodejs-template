@@ -7,7 +7,7 @@ The source code is on [GitHub](https://github.com/CodinGame/nodejs-template), pl
 
 # Hands-on Demo
 
-@[Luke, how many stars are there in these galaxies?]({"stubs": ["Exercises/UniverseStub.js"],"command": "node_modules/mocha/bin/mocha UniverseTest.js --reporter list"})
+@[Luke, how many stars are there in these galaxies?]({"stubs": ["exercises/universestub.js"],"command": "node_modules/mocha/bin/mocha universetest.js --reporter list"})
 
 Check out the markdown file [`welcome.md`](https://github.com/CodinGame/nodejs-template/blob/master/markdowns/welcome.md) to see how this exercise is injected into the template.
 
