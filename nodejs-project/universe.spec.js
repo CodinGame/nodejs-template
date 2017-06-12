@@ -32,5 +32,5 @@ it('should sum stars', function () {
 });
 
 function printMessage(channel, message) {
-  console.log('TECHIO> message --channel "' + channel + '" "' + message + '"');
+  console.log('\nTECHIO> message --channel "' + channel + '" "' + message + '"');
 }
